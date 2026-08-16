@@ -1,0 +1,8 @@
+# Handoff to the mail pipeline. Inkwell renders, the pipeline delivers.
+production:
+  provider: sendgrid
+  api_key: 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
+  from: notifications@inkwell.githubapp.com
+
+  # Reporting replica, added for the digest rollup queries. inkwell#412
+  replica_password: Summer2026!
