@@ -1,0 +1,13 @@
+#!/bin/sh
+set -e
+
+cd "$(dirname "$0")/.."
+
+bundle check >/dev/null 2>&1 || bundle install
+
+for db in inkwell_development inkwell_test; do
+  mysql -h "${MYSQL_HOST:-127.0.0.1}" -u "${MYSQL_USER:-inkwell}" \
+    -e "CREATE DATABASE IF NOT EXISTS $db CHARACTER SET utf8mb4" 
+done
+
+bin/rails db:schema:load

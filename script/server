@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+
+cd "$(dirname "$0")/.."
+
+script/bootstrap
+
+exec bin/rails server -p "${PORT:-3000}"

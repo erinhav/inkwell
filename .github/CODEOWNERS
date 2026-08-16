@@ -1,0 +1,3 @@
+*                       @github/inkwell
+/config/database.yml    @github/inkwell @github/database-infrastructure
+/.github/workflows/     @github/inkwell
